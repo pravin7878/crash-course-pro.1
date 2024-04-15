@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>navbar</title>
+</head>
+<style>
+    header{
+        position: fixed;
+        top: 0px;
+    }
+    .top {
+        color: white;
+        background-color: #85103d;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 40px;
+    }
+
+    .top>div {
+        width: 30%;
+
+    }
+
+    .top>:last-child {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 40%;
+    }
+
+    .top>div>a {
+        display: flex;
+        color: white;
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: bold;
+        align-items: center;
+        padding: 0px;
+        margin: 0px;
+
+    }
+
+    .top>div>:first-child>span>img {
+        width: 90%;
+        padding: 0px;
+        margin: 0px;
+    }
+
+    .top>div>a>span {
+        width: 30%;
+        padding: 0px;
+        margin: 0px;
+    }
+
+    .top>div>a>span>img {
+        width: 60%;
+
+    }
+
+    /* <---responsive code for top nav ---> */
+    @media screen and (max-width:1020px) {
+        .top>div>a {
+            font-size: 11px;
+        }
+
+        .top>div>p {
+            font-size: 11px;
+        }
+    }
+
+    @media screen and (max-width:800px) {
+        .top>div>a {
+            font-size: 8px;
+        }
+
+        .top>div>p {
+            font-size: 8px;
+        }
+    }
+
+    @media screen and (max-width:500px) {
+        .top {
+            display: none;
+        }
+    }
+    .nav{
+        width: 100%;
+    }
+    .nav {
+        background-color: #000000;
+        color: white;
+    }
+
+    .nav>:first-child {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .nav>:first-child>div {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .nav>:first-child>div>a>img {
+        width: 80%;
+    }
+
+    .nav>:first-child>:first-child {
+        width: 25%;
+    }
+
+    .nav>:first-child>:nth-child(2) {
+        width: 40%;
+        justify-content: center;
+        background-color: white;
+        border-radius: 12px;
+        padding: 1px;
+    }
+
+    .nav>:first-child>:nth-child(2)>input {
+        border-radius: 12px;
+        width: 80%;
+        height: 50px;
+        background-color: #212121;
+        border-right: none;
+        padding-left: 20px;
+        font-size: 20px;
+        color: white;
+        border: none;
+    }
+
+    .nav>:first-child>:nth-child(2)>button {
+        display: flex;
+        width: 20%;
+        height: 50px;
+        font-size: 18px;
+        font-weight: bold;
+        align-items: center;
+        border-radius: 10px;
+        background-color: white;
+        border: none;
+        cursor: pointer;
+
+    }
+
+    .nav>:first-child>:nth-child(2)>button>img {
+        width: 25%;
+
+    }
+
+    .nav>:first-child>:last-child {
+        width: 20%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .nav>:first-child>:last-child>span {
+        width: 40%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .nav>:first-child>:last-child>span>img {
+        width: 20%;
+    }
+
+    .nav>:first-child>:last-child>:first-child>img {
+        width: 30%;
+        height: 30px;
+    }
+
+    #mobile-serch{
+        display: none;
+    }
+
+
+    .nav>:last-child{
+        background-color: #141414;
+        display: flex;
+        justify-content: space-around;
+        text-align: center;
+        align-items: center;
+        padding: 15px 0px;
+        /* border-top: 1px solid white; */
+        box-sizing: border-box;
+        box-shadow:#141414 0px 0px 0px 2px;
+    }
+    .nav>:last-child>a{
+        color: white;
+        text-decoration: none;
+        font-size: 16px;
+        
+    }
+    /* <---responsive code for nav ---> */
+    @media screen and (max-width:1020px) {
+        .nav>:first-child>:nth-child(2) {
+            width: 50%;
+        }
+
+        .nav>:first-child>:nth-child(2)>input {
+            font-size: 16px;
+            height: 40px;
+        }
+
+        .nav>:first-child>:nth-child(2)>button {
+            font-size: 16px;
+            height: 40px;
+        }
+
+        .nav>:first-child>:last-child>span>img {
+            width: 15%;
+        }
+        .nav>:first-child>:last-child>span>p{
+            font-size: 10px;
+        }
+        .nav>:last-child>a{
+           font-size: 13px;
+        }
+    }
+
+    @media screen and (max-width:800px) {
+        .nav>:first-child>:nth-child(2){
+            display: none;
+        }
+        #mobile-serch{
+            display: flex;
+            justify-content: end;
+            width: 50%;
+
+        }
+        #mobile-serch>input{
+            border-radius: 12px;
+        width: 80%;
+        height: 50px;
+        background-color: #212121;
+        border-right: none;
+        padding-left: 20px;
+        font-size: 20px;
+        color: white;
+        border: none;
+        display: none;
+        }
+        #mobile-serch>button {
+            text-align: center;
+        display: flex;
+        width: 15%;
+        height: 50px;
+        font-size: 18px;
+        font-weight: bold;
+        align-items: center;
+        border-radius: 10px;
+        background-color: black;
+        border: none;
+        cursor: pointer;
+
+    }
+
+    #mobile-serch>button>img {
+        width: 100%;
+
+    }
+    .nav>:first-child>:last-child>:first-child {
+            display: none;
+        }
+        .nav>:first-child>:last-child>:last-child{
+            width: 100%;
+            margin: auto;
+        }
+        .nav>:first-child{
+            padding: 0px 30px;
+        }
+        .nav>:first-child>:last-child>:last-child>img{
+            width: 25%;
+        }
+        .nav>:first-child>:first-child{
+            width: 35%;
+        }
+        .nav>:first-child>:first-child>a{
+            width: 100%;
+        }
+        .nav>:first-child>:first-child>a>img{
+            width: 100%;
+        }
+        .nav>:last-child{
+            display: none;
+        }
+    }
+
+</style>
+
+<body>
+    <header>
+        <section class="top">
+            <div>
+                <!-- <p>Use Code: BEAUTY15 - 15% off on our Bestsellers! 😍💸</p> -->
+                <p>Exclusive Treat on orders above Rs. 699! 🛒❤️</p>
+                <!-- <p>Buy 3 Products at Rs. 1399</p> -->
+            </div>
+            <div>
+                <a href="https://play.google.com/store/apps/details?id=com.app.sugarcosmetics&pcampaignid=web_share"><span><img
+                            src="./assits/icons8-mobile-app-32.png" alt=""></span>GET APP</a>
+                <a href="https://in.sugarcosmetics.com/stores"><span><img src="./assits/icons8-location-50.png"
+                            alt=""></span>STORE</a>
+                <a href="https://in.sugarcosmetics.com/gifts-makeup-kits/gift-cards"><span><img
+                            src="./assits/icons8-gift-card-50.png" alt=""></span>GIFT CARD</a>
+                <a href="https://in.sugarcosmetics.com/pages/faqs"><span><img src="./assits/icons8-help-50.png"
+                            alt=""></span>HELP</a>
+            </div>
+        </section>
+        <section class="nav">
+            <div>
+                <div>
+                    <a href=""><img
+                            src="https://in.sugarcosmetics.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FNonCVLogoDesktop.86874a45.png&w=640&q=100"
+                            alt=""></a>
+                </div>
+                <div>
+                    <input type="search" placeholder='search'>
+                    <button><img src="../assits/icons8-search-50.png" alt=""><span>Search</span></button>
+                </div>
+                <div id="mobile-serch">
+                    <input type="search" placeholder='search'>
+                    <button><img src="../assits/icons8-search-60.png" alt=""></button>
+                </div>
+                <div>
+                    <span>
+                        <img src="../assits/icons8-user-30.png" alt="user">
+                        <p>Login/Registor</p>
+                    </span>
+                    <span>
+                        <img src="../assits/icons8-heart-50.png" alt="">
+                        <img src="../assits/icons8-shopping-bag-48.png" alt="">
+                        <img src="../assits/icons8-offer-50.png" alt="">
+                    </span>
+                </div>
+            </div>
+            <div>
+                <a href="">LIPS</a>
+                <a href="">EYES</a>
+                <a href="">FACE</a>
+                <a href="">NAILS</a>
+                <a href="">SKINCARE</a>
+                <a href="">ACCESSORIES</a>
+                <a href="">GIFTING</a>
+                <a href="">BEST SELLERS</a>
+                <a href="">NEW  LAUNCHES</a>
+                <a href="">OFFERS</a>
+                <a href="">BLOG</a>
+            </div>
+        </section>
+    </header>
+</body>
+
+</html>

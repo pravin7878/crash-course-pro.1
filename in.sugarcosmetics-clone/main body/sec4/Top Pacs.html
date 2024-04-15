@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+  <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="./sec1.css">
+  
+  <title>top packs</title>
+  <!-- Demo styles -->
+  <style>
+    .swiper {
+      width: 90%;
+      height: 100%;
+      margin: auto;
+      padding-bottom: 20px;
+      margin-top: 50px;
+    }
+
+    .swiper-slide {
+      text-align: center;
+      font-size: 12px;
+      background: #fff;
+      margin: auto;
+      /* display: flex; 
+      justify-content: center;
+      align-items: center; */
+      width: 30%;
+      margin-bottom: 30px;
+    }
+
+    .swiper-slide img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 12px;
+    }
+
+    .swiper {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .swiper-wrapper>div{
+      /* display: flex; */
+      /* flex-direction: column; */
+      /* justify-content: center; */
+      /* width: 10%; */
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      /* padding: 15px; */
+      border-radius: 12px;
+    }
+    
+    .main>h1{
+      text-align: center;
+      padding-top: 30px;
+    }
+    
+  </style>
+
+
+</head>
+
+<body>
+  <!-- Swiper -->
+  <div class="main">
+    <h1>TOP PICKS OF THE WEEK
+    </h1>
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <!-- slide div will be append from js -->
+        </div>
+
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+      
+    </div>
+  </div>
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      slidesPerView: 3,
+      spaceBetween: 30,
+      loop: true,
+      // autoplay: { deley: 2000 },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+  </script>
+  <script>
+    let container = document.querySelector('.swiper-wrapper')
+console.log(container)
+
+    let productImage = [
+        {
+            image:"https://in.sugarcosmetics.com/_next/image?url=https://d32baadbbpueqt.cloudfront.net/Homepage/c84926c4-8914-484e-8ad5-649fd1980d1f.jpg&w=2048&q=75"
+        },
+        {
+            image: "https://in.sugarcosmetics.com/_next/image?url=https://d32baadbbpueqt.cloudfront.net/Homepage/cd5c828f-a59f-4342-8955-25c7a9f7c70d.jpg&w=2048&q=75"
+        },
+        {
+            image:"https://in.sugarcosmetics.com/_next/image?url=https://d32baadbbpueqt.cloudfront.net/Homepage/8b810378-baea-4a92-a85d-2e4412ad5c4b.jpg&w=2048&q=75"
+        },
+        {
+            image:"https://d32baadbbpueqt.cloudfront.net/Homepage/b185408c-0721-47e5-8dc4-549c19759a52.gif"
+        },
+        {
+            image:"https://in.sugarcosmetics.com/_next/image?url=https://d32baadbbpueqt.cloudfront.net/Homepage/d1e6ecce-05e3-4d2a-82e7-09eba677ce57.jpg&w=2048&q=75"
+        },
+        {
+            image:"https://in.sugarcosmetics.com/_next/image?url=https://d32baadbbpueqt.cloudfront.net/Homepage/388de371-6bca-45c5-8efa-97eeee4d1e09.jpg&w=2048&q=75"
+        },
+    ]
+    productImage.forEach((product)=>{
+        console.log(product)
+        let div = document.createElement('div')
+        div.classList.add("swiper-slide")
+        let img = document.createElement('img')
+        img.src = product.image
+        div.append(img);
+        container.append(div)
+    })
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Products (slider)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+  <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="./sec1.css">
+  <!-- Demo styles -->
+  <style>
+    .swiper {
+      width: 90%;
+      height: 100%;
+      padding-bottom: 20px;
+    }
+
+    .swiper-slide {
+      text-align: center;
+      font-size: 12px;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 15%;
+      margin-bottom: 30px;
+    }
+
+    .swiper-slide img {
+      display: block;
+      /* width: 100%;
+      height: 100%; */
+      object-fit: cover;
+    }
+
+    .swiper {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .swiper-wrapper>div{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 15%;
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      /* padding: 15px; */
+      border-radius: 12px;
+    }
+    .swiper-wrapper>div>img{
+      width: 70%;
+      height: 200px;
+    }
+    .swiper-wrapper>div>:last-child{
+      background-color: black;
+      border-radius: 15px;
+      color: #fff;
+      padding: 10px 30px;
+      font-weight: bold;
+      margin-bottom: 30px;
+    }
+    .main>h1{
+      text-align: center;
+      color: #fff;
+      padding-top: 30px;
+    }
+    .main{
+      background-color: #242424;
+    }
+    .main>:last-child{
+      background-color: white;
+      padding-top: 30px;
+    }
+    
+  </style>
+</head>
+
+<body>
+  <!-- Swiper -->
+  <div class="main">
+    <h1>BESTSELLERS</h1>
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+       
+      </div>
+
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div>
+    </div>
+
+    <div>
+      <h1>FESTIVE ZONE
+      </h1>
+      <div><img src="https://in.sugarcosmetics.com/_next/image?url=https%3A%2F%2Fd32baadbbpueqt.cloudfront.net%2FHomepage%2Fd6b28fbf-4bc3-45b5-8353-9d9b02f5df24.jpg&w=2048&q=75" alt="">
+      </div>
+    </div>
+  </div>
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      slidesPerView: 4,
+      spaceBetween: 30,
+      loop: true,
+      // autoplay: { deley: 2000 },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+
+
+
+  </script>
+  <script src="./ProductData.js"></script>
+</body>
+
+</html>

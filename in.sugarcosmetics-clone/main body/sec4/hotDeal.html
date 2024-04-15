@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+  <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="./sec1.css">
+  
+  <title>Hote deal</title>
+  <!-- Demo styles -->
+  <style>
+    .swiper {
+      width: 90%;
+      height: 100%;
+      margin: auto;
+      padding-bottom: 20px;
+      margin-top: 50px;
+    }
+
+    .swiper-slide {
+      text-align: center;
+      font-size: 12px;
+      background: #fff;
+      margin: auto;
+      /* display: flex; 
+      justify-content: center;
+      align-items: center; */
+      width: 30%;
+      margin-bottom: 30px;
+    }
+
+    .swiper-slide img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 12px;
+    }
+
+    .swiper {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .swiper-wrapper>div{
+      /* display: flex; */
+      /* flex-direction: column; */
+      /* justify-content: center; */
+      /* width: 10%; */
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      /* padding: 15px; */
+      border-radius: 12px;
+    }
+    
+    .main>h1{
+      text-align: center;
+      padding-top: 30px;
+    }
+    
+  </style>
+
+<!-- <style>
+    html,
+    body {
+      position: relative;
+      height: 100%;
+    }
+
+    body {
+      background: #eee;
+      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      color: #000;
+      margin: 0;
+      padding: 0;
+    }
+
+    .swiper {
+      width: 100%;
+      height: 100%;
+    }
+
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .swiper-slide img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .swiper {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  </style> -->
+</head>
+
+<body>
+  <!-- Swiper -->
+  <div class="main">
+    <h1>HOT DEALS</h1>
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <!-- slide div will be append from js -->
+        </div>
+
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+      
+    </div>
+
+    
+  </div>
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      slidesPerView: 3,
+      spaceBetween: 30,
+      loop: true,
+      // autoplay: { deley: 2000 },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+  </script>
+  <script>
+    let container = document.querySelector('.swiper-wrapper')
+console.log(container)
+
+    let productImage = [
+        {
+            image:"https://d32baadbbpueqt.cloudfront.net/Homepage/9b92bb73-edd9-4b40-84be-c0a3f9c32d7c.gif"
+        },
+        {
+            image: "https://in.sugarcosmetics.com/_next/image?url=https://d32baadbbpueqt.cloudfront.net/Homepage/a376e8d4-5e02-4dfb-b649-3dc4807499c5.jpg&w=2048&q=75"
+        },
+        {
+            image:"https://d32baadbbpueqt.cloudfront.net/Homepage/062d29c6-31e6-4bee-861a-3b8f47c2bab4.gif"
+        },
+    ]
+    productImage.forEach((product)=>{
+        console.log(product)
+        let div = document.createElement('div')
+        div.classList.add("swiper-slide")
+        let img = document.createElement('img')
+        img.src = product.image
+        div.append(img);
+        container.append(div)
+    })
+  </script>
+</body>
+
+</html>

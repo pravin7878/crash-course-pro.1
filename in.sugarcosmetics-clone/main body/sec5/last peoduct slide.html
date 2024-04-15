@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Products (slider)-2</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./sec1.css">
+    <!-- Demo styles -->
+    <style>
+        .swiper {
+            width: 90%;
+            height: 100%;
+            padding-bottom: 20px;
+        }
+
+        .swiper-slide {
+            text-align: center;
+            font-size: 12px;
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 15%;
+            margin-bottom: 30px;
+        }
+
+        .swiper-slide img {
+            display: block;
+            /* width: 100%;
+      height: 100%; */
+            object-fit: cover;
+        }
+
+        .swiper {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .swiper-wrapper>div {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 15%;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            /* padding: 15px; */
+            border-radius: 12px;
+        }
+
+        .swiper-wrapper>div>img {
+            width: 70%;
+            height: 200px;
+        }
+
+        .swiper-wrapper>div>:last-child {
+            background-color: black;
+            border-radius: 15px;
+            color: #fff;
+            padding: 10px 30px;
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+
+        .main>h1 {
+            text-align: center;
+            padding-top: 30px;
+        }
+
+        /* .main{
+      background-color: #242424;
+    }
+    .main>:last-child{
+      background-color: white;
+      padding-top: 30px;
+    } */
+    </style>
+</head>
+
+<body>
+    <!-- Swiper -->
+    <div class="main">
+        <h1>MERCH STATION</h1>
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper product-wrapper">
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 4,
+            spaceBetween: 30,
+            loop: true,
+            // autoplay: { deley: 2000 },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+
+      
+    </script>
+    <script>
+        let products = [
+            {
+                img: "https://in.sugarcosmetics.com/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0906%2F2558%2Fproducts%2FLaptop-Bag-WBG-1_d9b0a265-b8a5-4a24-a8f8-7d5b0f51788b.jpg%3Fv%3D1675182065&w=384&q=75",
+                title: "Laptop Bag 15 Inch (Purple/Teal Blue) - Signed By Vineeta Singh",
+                mrp: 999,
+                discount: 799,
+            },
+            {
+                img: "https://in.sugarcosmetics.com/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0906%2F2558%2Fproducts%2FD2C---Merch---Laptop-Sleeves_1.jpg%3Fv%3D1625240618&w=384&q=75",
+                title: "Easy PC Laptop Sleeve",
+                mrp: 799,
+                discount: 639,
+            },
+            {
+                img: "https://in.sugarcosmetics.com/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0906%2F2558%2Fproducts%2Fsugar-cosmetics-tote-chic-canvas-carry-28477196927059.jpg%3Fv%3D1624532788&w=384&q=75",
+                title: "Tote Chic Canvas Carry",
+                mrp: 799,
+                discount: 639,
+            },
+            {
+                img: "https://in.sugarcosmetics.com/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0906%2F2558%2Fproducts%2Fsugar-cosmetics-money-maker-envelope-wallet-black-28490557358163.jpg%3Fv%3D1624954703&w=384&q=75",
+                title: "Money Maker Envelope Wallet - Black",
+                mrp: 599,
+                discount: 479,
+            },
+            {
+                img: "https://in.sugarcosmetics.com/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0906%2F2558%2Fproducts%2Fsugar-cosmetics-always-ahead-adjustable-cap-28516708352083.jpg%3Fv%3D1625067752&w=384&q=75",
+                title: "Always Ahead Adjustable Cap",
+                mrp: 399,
+                discount: 319,
+            },
+        ]
+
+        let productContainer = document.querySelector('.swiper-wrapper')
+
+products.map((product) => {
+    console.log(product)
+
+    let div = document.createElement('div')
+    // div.setAttribute('class',"swiper-slide")
+    div.classList.add("swiper-slide");
+    let img = document.createElement('img')
+    img.src = product.img
+    let title = document.createElement('h3')
+    title.innerText = product.title
+    let mrp = document.createElement('p')
+    mrp.innerText = `MRP:  ${product.mrp}`
+    let dp = document.createElement('p')
+    dp.innerText = `Discount:- ${product.discount}`
+
+    let button = document.createElement('btn')
+    button.innerText = "ADD TO CART"
+    div.append(img, title, mrp, dp, button)
+
+    productContainer.append(div)
+})
+
+
+    </script>
+</body>
+
+</html>
